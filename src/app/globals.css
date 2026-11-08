@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* Tokens validados por src/ui/contraste.test.ts (WCAG AA). */
+:root {
+  color-scheme: light dark;
+  --fundo: #faf7f0;
+  --superficie: #ffffff;
+  --realce: #e4f0e6;
+  --texto: #1c2620;
+  --texto-suave: #48554d;
+  --primaria: #1b6b3a;
+  --sobre-primaria: #ffffff;
+  --borda: #76827a;
+  --alerta: #a02c18;
+  --alerta-fundo: #fdece7;
+  --estrela: #855600;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #121815;
+    --superficie: #1c2420;
+    --realce: #213429;
+    --texto: #f0f3ee;
+    --texto-suave: #b8c3bb;
+    --primaria: #74d394;
+    --sobre-primaria: #0c2114;
+    --borda: #84918a;
+    --alerta: #ffa48f;
+    --alerta-fundo: #3b1e17;
+    --estrela: #f2c14e;
+  }
+}
+
+@theme inline {
+  --color-fundo: var(--fundo);
+  --color-superficie: var(--superficie);
+  --color-realce: var(--realce);
+  --color-texto: var(--texto);
+  --color-suave: var(--texto-suave);
+  --color-primaria: var(--primaria);
+  --color-sobre-primaria: var(--sobre-primaria);
+  --color-borda: var(--borda);
+  --color-alerta: var(--alerta);
+  --color-alerta-fundo: var(--alerta-fundo);
+  --color-estrela: var(--estrela);
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primaria);
+  outline-offset: 2px;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primaria);
+}
+
+progress {
+  appearance: none;
+  border: 1px solid var(--borda);
+  border-radius: 0.25rem;
+  background: var(--superficie);
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background: var(--superficie);
+}
+
+progress::-webkit-progress-value {
+  background: var(--primaria);
+}
+
+progress::-moz-progress-bar {
+  background: var(--primaria);
+}
+
+progress.excedido::-webkit-progress-value {
+  background: var(--alerta);
+}
+
+progress.excedido::-moz-progress-bar {
+  background: var(--alerta);
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+/* Bottom sheet: encosta na base da tela e sobe ao abrir. */
+dialog.folha {
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 42rem;
+  max-height: 88dvh;
+  animation: subir 180ms ease-out;
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(1.5rem);
+    opacity: 0;
+  }
+}
+
+/* Resumo fixo não pode tomar a tela com zoom de 200%. */
+@media (max-height: 34rem) {
+  .resumo-fixo {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

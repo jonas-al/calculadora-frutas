@@ -1,0 +1,14 @@
+Tabela Brasileira de Composição de Alimentos - FIXTURE DE TESTE (NÃO É A TACO),,,,,,,,,,,
+Número do,Descrição dos alimentos,Umidade,Energia,,Proteína,Lipídeos,Colesterol,Carboidrato,Fibra Alimentar,Cinzas,Cálcio
+Alimento,,(%),(kcal),(kJ),(g),(g),(mg),(g),(g),(g),(mg)
+Cereais e derivados,,,,,,,,,,,
+9001,"Arroz, fictício, cru",*,111,*,*,*,*,*,*,*,*
+Frutas e derivados,,,,,,,,,,,
+9101,"Abacaxi, cru",*,48,*,*,Tr,*,*,*,*,*
+9102,"Banana, prata, crua",*,98,410,1.3,0.1,*,26,2,*,*
+9103,"Maçã, Argentina, com casca, crua",*,*,*,*,*,*,*,*,*,*
+9104,"Maçã, Fuji, com casca, crua",*,56,*,*,*,*,*,*,*,*
+9105,"Uva, Itália, crua",*,53,*,*,NA,*,*,*,*,*
+9106,"Banana, doce em barra",*,*,*,*,*,*,*,*,*,*
+Gorduras e óleos,,,,,,,,,,,
+9201,"Óleo, fictício",*,884,*,*,*,*,*,*,*,*
